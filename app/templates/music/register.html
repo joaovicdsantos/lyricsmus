@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Register Music</h1>
+  <form method="post">
+    <label for="title">Title: </label><br>
+    <input type="text" name="title" id="title"><br>
+    <label for="lyrics">Lyrics: </label><br>
+    <textarea name="lyrics" rows="8" cols="80"></textarea><br>
+    <label for="singer">Singer: </label><br>
+    <input type="text" name="singer" id="singer"><br>
+    <label for="year">Year: </label><br>
+    <input type="number" maxlength="4" min="1" name="year" id="year"><br><br>
+    <input type="submit" value="Register">
+  </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>Music:</h4>
+<ul>
+  {% for mus in music: %}
+  <a href="{{ url_for('music.music', id=mus.id) }}">
+    <li>{{ mus. title }}</li>
+  </a>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('music.register') }}">+ Music</a>
+{% endblock %}

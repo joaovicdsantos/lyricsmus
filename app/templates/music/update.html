@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Music</h1>
+  <form method="post">
+    <label for="title">Title: </label><br>
+    <input type="text" name="title" id="title" value="{{ music.title }}"><br>
+    <label for="lyrics">Lyrics: </label><br>
+    <textarea name="lyrics" rows="8" cols="80">{{ music.lyrics }}</textarea><br>
+    <label for="singer">Singer: </label><br>
+    <input type="text" name="singer" id="singer" value="{{ music.singer }}"><br>
+    <label for="year">Year: </label><br>
+    <input type="number" maxlength="4" min="1" name="year" id="year" value="{{ music.year }}"><br><br>
+    <input type="submit" value="Register">
+  </form>
+{% endblock %}

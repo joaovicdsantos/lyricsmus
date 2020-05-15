@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>{{ music.title }}:</h4>
+<a href="{{ url_for('core.index') }}">Back</a>
+<a href="{{ url_for('music.delete', id=music.id) }}">Delete</a>
+<a href="{{ url_for('music.update', id=music.id) }}">Edit</a>
+<div style="width: 400px;">
+  <p>Lyrics:<br><pre style="text-align: center;">{{ music.lyrics }}</pre></p>
+  <p>Singer: {{ music.singer }}</p>
+  <p>Year: {{ music.year }}</p>
+</div>
+{% endblock %}
