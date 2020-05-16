@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4>{{ music.title }}:</h4>
-<a href="{{ url_for('core.index') }}">Back</a>
-<a href="{{ url_for('music.delete', id=music.id) }}">Delete</a>
-<a href="{{ url_for('music.update', id=music.id) }}">Edit</a>
-<div style="width: 400px;">
-  <p>Lyrics:<br><pre style="text-align: center;">{{ music.lyrics }}</pre></p>
-  <p>Singer: {{ music.singer }}</p>
-  <p>Year: {{ music.year }}</p>
+<div class="music-detail">
+  <h1>{{ music.title }}:</h1>
+  <p class="music-info">{{ music.singer }} / {{ music.year }}</p>
+  <pre class="lyrics">{{ music.lyrics }}</pre>
+  <div style="margin-top: 10px">
+    <a href="{{ url_for('core.index') }}" class="btn btn-primary">Back</a>
+    <a href="{{ url_for('music.delete', id=music.id) }}" class="btn btn-error">Delete</a>
+    <a href="{{ url_for('music.update', id=music.id) }}" class="btn btn-warning">Edit</a>
+  </div>
 </div>
 {% endblock %}

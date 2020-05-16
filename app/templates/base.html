@@ -2,10 +2,23 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Letras.mus</title>
+    <title>Lyrics.mus</title>
+    <link rel="stylesheet" href="/static/css/master.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Letras.mus</h1>
-    {% block content %}{% endblock %}
+    <header>
+      <div class="container">
+        <h1 class="title">Lyrics.mus</h1>
+        <h2 class="subtitle">Your music platform</h2>
+        <nav>
+          <a href="{{ url_for('core.index') }}">Home</a>
+          <a href="{{ url_for('music.register') }}">Register</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
   </body>
 </html>

@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4>Music:</h4>
-<ul>
+<h1>Music:</h1>
+<div class="music-container">
   {% for mus in music: %}
-  <a href="{{ url_for('music.music', id=mus.id) }}">
-    <li>{{ mus. title }}</li>
+  <a class="music" href="{{ url_for('music.music', id=mus.id) }}">
+    <figure>
+      <img src="/static/img/homer.jpg" title="" alt="" class="singer-photo">
+      <figcaption>
+        {{ mus. title }}
+      </figcaption>
+    </figure>
   </a>
   {% endfor %}
-</ul>
-<a href="{{ url_for('music.register') }}">+ Music</a>
+</div>
 {% endblock %}
